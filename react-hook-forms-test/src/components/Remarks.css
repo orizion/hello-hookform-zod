@@ -1,0 +1,80 @@
+/* CUBE CSS: Utility classes */
+.u-padding-sm {
+    padding: 0.5rem;
+  }
+  
+  .u-margin-bottom-md {
+    margin-bottom: 1rem;
+  }
+  
+  /* Block styles */
+  .remarks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 50%;
+    overflow-y: hidden;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  
+  .remarks__heading {
+    font-size: 1rem;
+    color: #000;
+  }
+  
+  .remarks__section {
+    overflow-y: auto;
+    max-height: 40%;
+  }
+  
+  .remarks__title {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .remarks__title--high {
+    background-color: #ff4c4c;
+  }
+  
+  .remarks__title--low {
+    background-color: #4caf50;
+  }
+  
+  .remarks__title-number {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .remarks__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .remarks__list-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  
+  .remarks__checkbox {
+    margin-right: 0.5rem;
+  }
+  
+  .remarks__label {
+    flex-grow: 1;
+    color: #000; /* Ensuring text is visible for unchecked items */
+  }
+  
+  .remarks__label--checked {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000; /* Ensuring text is visible for checked items */
+  }
+  
