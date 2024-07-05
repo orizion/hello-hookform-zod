@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Remarks.css';
 import '../css/utilities/_flow.css';
 import { RemarkItem } from '../state/reducers/card-reducers';
-import { Controller, useFieldArray, useFormContext } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 
 
 export interface RemarksProps {
@@ -13,20 +13,6 @@ export interface RemarksProps {
 const GPTRemarks: React.FC<RemarksProps> = ({ topItems, bottomItems }) => {
   const {register, control, watch} = useFormContext();
 
-  const [topItemsState, setTopItemsState] = useState(topItems);
-  const [bottomItemsState, setBottomItemsState] = useState(bottomItems);
-
-  const handleCheckboxChange = (index: number, isTop: boolean) => {
-    if (isTop) {
-      const newItems = [...topItemsState];
-      newItems[index].checked = !newItems[index].checked;
-      setTopItemsState(newItems);
-    } else {
-      const newItems = [...bottomItemsState];
-      newItems[index].checked = !newItems[index].checked;
-      setBottomItemsState(newItems);
-    }
-  };
 //problem was in the name of the controller, it needs to match the item path in the state
 //and in case of lists we need to add the [] brackets around the index, like this: [${index}]
 const renderList = (items: RemarkItem[], severity: string) => (
@@ -67,10 +53,10 @@ const renderList = (items: RemarkItem[], severity: string) => (
     <div className="remarks flow">
       <h2 className="remarks__heading">Remarks</h2>
       <div className="remarks__section">
-        {renderList(topItemsState, 'high')}
+        {renderList(topItems, 'high')}
       </div>
       <div className="remarks__section">
-        {renderList(bottomItemsState, 'low')}
+        {renderList(bottomItems, 'low')}
       </div>
     </div>
   );
